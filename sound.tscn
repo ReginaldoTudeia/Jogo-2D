@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://co4xigqhqc21r"]
+
+[ext_resource type="AudioStream" uid="uid://36js6qqc82gg" path="res://Arte/Áudio/Áudio do WhatsApp de 2024-11-27 à(s) 22.25.52_46c3dc20.mp3" id="1_t758v"]
+[ext_resource type="AudioStream" uid="uid://cp16hegd2tys0" path="res://Arte/Áudio/lightning-storm-6077.mp3" id="2_4scxg"]
+
+[node name="Sound" type="Node2D"]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_t758v")
+volume_db = 1.0
+autoplay = true
+
+[node name="Storm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_4scxg")
+volume_db = 1.0
+autoplay = true
