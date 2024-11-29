@@ -1,0 +1,264 @@
+[gd_scene load_steps=28 format=3 uid="uid://cmckpnqm21p0o"]
+
+[ext_resource type="Script" path="res://Player/character_body_2d.gd" id="1_cxqec"]
+[ext_resource type="Texture2D" uid="uid://b5ip74yjvq4h2" path="res://Arte/Personagem/Sprites pesronagem f.png" id="1_n73y7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jniol"]
+size = Vector2(37, 28)
+
+[sub_resource type="Animation" id="Animation_18i5k"]
+resource_name = "Andar_costa"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 4]
+}
+
+[sub_resource type="Animation" id="Animation_io6y3"]
+resource_name = "Andar_direita"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [13, 14, 15, 12]
+}
+
+[sub_resource type="Animation" id="Animation_4cq3a"]
+resource_name = "Andar_esquerda"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [9, 10, 11, 8]
+}
+
+[sub_resource type="Animation" id="Animation_j56hm"]
+resource_name = "Andar_frente"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 0]
+}
+
+[sub_resource type="Animation" id="Animation_7h0mc"]
+resource_name = "Parado_costa"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_1vl7w"]
+resource_name = "Parado_direita"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+
+[sub_resource type="Animation" id="Animation_vwm4h"]
+resource_name = "Parado_esquerda"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_ucqik"]
+resource_name = "Parado_frente"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_gj0w1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3s5sq"]
+_data = {
+"Andar_costa": SubResource("Animation_18i5k"),
+"Andar_direita": SubResource("Animation_io6y3"),
+"Andar_esquerda": SubResource("Animation_4cq3a"),
+"Andar_frente": SubResource("Animation_j56hm"),
+"Parado_costa": SubResource("Animation_7h0mc"),
+"Parado_direita": SubResource("Animation_1vl7w"),
+"Parado_esquerda": SubResource("Animation_vwm4h"),
+"Parado_frente": SubResource("Animation_ucqik"),
+"RESET": SubResource("Animation_gj0w1")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_15b4w"]
+animation = &"Andar_costa"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eymwb"]
+animation = &"Andar_frente"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xpgwj"]
+animation = &"Parado_direita"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1tta5"]
+animation = &"Andar_esquerda"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_kck6t"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_15b4w")
+blend_point_0/pos = Vector2(0, 1.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_eymwb")
+blend_point_1/pos = Vector2(0, -1.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_xpgwj")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_1tta5")
+blend_point_3/pos = Vector2(-1, 0)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8paq3"]
+animation = &"Parado_costa"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eh7bp"]
+animation = &"Parado_frente"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o5jqu"]
+animation = &"Parado_direita"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eetvj"]
+animation = &"Parado_esquerda"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_pvvkc"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_8paq3")
+blend_point_0/pos = Vector2(0, 1.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_eh7bp")
+blend_point_1/pos = Vector2(0, -1.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_o5jqu")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_eetvj")
+blend_point_3/pos = Vector2(-1, 0)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qrygs"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wrqew"]
+break_loop_at_end = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6t0dx"]
+break_loop_at_end = true
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_cccsy"]
+states/Andar/node = SubResource("AnimationNodeBlendSpace2D_kck6t")
+states/Andar/position = Vector2(511, 100)
+states/End/position = Vector2(910, 100)
+states/Parado/node = SubResource("AnimationNodeBlendSpace2D_pvvkc")
+states/Parado/position = Vector2(325, 100)
+states/Start/position = Vector2(164, 100)
+transitions = ["Start", "Parado", SubResource("AnimationNodeStateMachineTransition_qrygs"), "Parado", "Andar", SubResource("AnimationNodeStateMachineTransition_wrqew"), "Andar", "Parado", SubResource("AnimationNodeStateMachineTransition_6t0dx")]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_cxqec")
+speed = null
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_n73y7")
+hframes = 5
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_jniol")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3s5sq")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_cccsy")
+advance_expression_base_node = NodePath("../AnimationPlayer")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Andar/blend_position = Vector2(0, -0.00973451)
+parameters/Parado/blend_position = Vector2(-0.00158983, -0.10708)
